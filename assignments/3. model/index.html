@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>model</title>
+    <style>div {width: 80%; height: 800px; border: 1px solid red;}</style>
+</head>
+<body>
+    <center>
+        <div></div>
+        <p></p>
+        <button>Info</button>
+    </center>
+    <script>
+    let data = [
+  {
+    image:
+      "http://data.mavo.io/portfolio/images/pasted-image-1494464667397.png",
+    name: "Carwash",
+    category: "Painting"
+  },
+  {
+    image:
+      "http://data.mavo.io/portfolio/images/pasted-image-1494528264937.png",
+    name: "Muck Mouth",
+    category: "Painting"
+  },
+  {
+    image:
+      "http://data.mavo.io/portfolio/images/pasted-image-1494528646446.png",
+    name: "Fishwall",
+    category: "Painting"
+  },
+  {
+    image: "http://data.mavo.io/portfolio/images/web-coffe-marilyn.jpg",
+    name: "Web Coffe Marilyn",
+    category: "Painting"
+  },
+  {
+    image:
+      "http://data.mavo.io/portfolio/images/pasted-image-1494903924970.png",
+    name: "Web 3 Jules",
+    category: "Painting"
+  },
+  {
+    image: "http://data.mavo.io/portfolio/images/web-electric3.jpg",
+    name: "Web electric3",
+    category: "Painting"
+  }
+];
+    var div = document.querySelector("div");
+    var img = document.createElement("img");
+    var p = document.querySelector("p");
+    var button = document.querySelector("button");
+    var i = 0;
+
+    function setImg(){
+        i++
+        img.setAttribute("src",data[i].image);
+        p.innerHTML = "Name of Pic is "+data[i].name +" & category is "+data[i].category;
+    }
+    button.addEventListener("click",setImg);
+    div.append(img);
+    img.setAttribute("src",data[i].image);
+    p.innerHTML = "Name of Pic is "+data[i].name +" & category is "+data[i].category;
+    img.style.width = "100%";
+    img.style.height = "100%";
+    p.style.fontSize = "30px";
+    button.style.width = "5rem";
+    button.style.height = "1.7rem";
+    button.style.border = "2px solid red";
+    
+    </script>
+</body>
+</html>

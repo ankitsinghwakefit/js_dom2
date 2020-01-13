@@ -25,7 +25,8 @@
     </center>
 
     <script>
-    function result(){
+    function result(e){
+      e.preventDefault();
       var name = document.querySelector("#name").value;
       var email = document.querySelector("#email").value;
       var password = document.querySelector("#password").value;
@@ -57,7 +58,7 @@
     }
     var btn = document.querySelector("#btn");
     console.dir(btn);
-    btn.addEventListener("mouseover",result);
+    btn.addEventListener("click",result);
     </script>
   </body>
 </html>
