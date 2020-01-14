@@ -6,5 +6,59 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Forms</title>
   </head>
-  <body></body>
+  <body>
+    <center>
+      <form style="border: 2px solid red;">
+        <input type="text" placeholder="Name" id="name"><br>
+        <p id="name_para"></p>
+
+        <input type="email" placeholder="Email" id="email"><br>
+        <p id="email_para"></p>
+
+        <input type="text" placeholder="Password" id="password"><br>
+        <p id="password_para"></p>
+
+        <button id="btn">Sign Up</button>
+
+      </form>
+      <p id="final"></p>
+    </center>
+
+    <script>
+    function result(e){
+      e.preventDefault();
+      var name = document.querySelector("#name").value;
+      var email = document.querySelector("#email").value;
+      var password = document.querySelector("#password").value;
+      var name_para = document.querySelector("#name_para");
+      var email_para = document.querySelector("#email_para");
+      var password_para = document.querySelector("#password_para");
+      var form = document.querySelector("form");
+      var final = document.querySelector("#final");
+      if(name != ""){
+      name_para.innerHTML = name;
+      }else {
+        name_para.innerHTML = "Name field can't be empty";
+      }
+      if(email != ""){
+        email.innerHTML = email;
+      } else {
+         email_para.innerHTML = "Email field can't be empty";
+      }
+      if(password != ""){
+        password.innerHTML = password;
+      } else {
+        password_para.innerHTML = "Please enter password";
+      }
+      if(name != "" && email != "" && password != ""){
+        // alert(`You are ${name} your email : ${email} and password is ${password}`);
+        form.style.display = "none";
+        final.innerHTML = `You are ${name} your email : ${email} and password is ${password}`;
+      } 
+    }
+    var btn = document.querySelector("#btn");
+    console.dir(btn);
+    btn.addEventListener("click",result);
+    </script>
+  </body>
 </html>
